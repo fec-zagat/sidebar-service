@@ -7,9 +7,9 @@ mongoose.connect(mongoURL, { useNewUrlParser: true });
 const db = mongoose.connection;
 
 db.once('open', () => {
-  console.log('CONNECTED');
+  console.log('Connected to mongoDB');
 });
 
-db.on('error', () => console.log('ERRRORRRR'));
+db.on('error', () => console.log('Error connecting to mongoDB'));
 
 module.exports = db;
