@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
 
+// eslint-disable-next-line no-unused-vars
+const db = require('./index.js');
+
 mongoose.Promise = global.Promise;
 
 const restaurantSchema = new mongoose.Schema({
@@ -57,4 +60,17 @@ const restaurantSchema = new mongoose.Schema({
 
 const Restaurant = mongoose.model('Restaurant', restaurantSchema);
 
+
+const find = (cb) => {
+  Restaurant.find().exec((err, docs) => {
+    if (err) {
+      cb(err);
+    } else {
+      console.log(docs);
+      cb(null, docs);
+    }
+  });
+};
+
 module.exports.Restaurant = Restaurant;
+module.exports.find = find;
