@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const path = require('path');
-const { find } = require('../database/Restaurant');
+const { find, findID } = require('../database/Restaurant');
 
 const app = express();
 const port = 3333;
@@ -13,8 +13,8 @@ app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, '../public')));
 
 
-app.get('/sidebar', (req, res) => {
-  find((err, results) => {
+app.get('/id/:id', (req, res) => {
+  findID('5c9eda85d2be340ad53466fe', (err, results) => {
     if (err) {
       res.sendStatus(500);
     } else {
@@ -22,5 +22,6 @@ app.get('/sidebar', (req, res) => {
     }
   });
 });
+
 
 app.listen(port, () => console.log(`LISTENING ON ${port}`));
