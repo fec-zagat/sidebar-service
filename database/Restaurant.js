@@ -72,5 +72,18 @@ const find = (cb) => {
   });
 };
 
+const findID = (_id, cb) => {
+  Restaurant.findById(_id).exec((err, docs) => {
+    if (err) {
+      cb(err);
+    } else {
+      console.log(docs);
+      cb(null, docs);
+    }
+  });
+};
+
+
 module.exports.Restaurant = Restaurant;
+module.exports.findID = findID;
 module.exports.find = find;
