@@ -1,5 +1,5 @@
 const faker = require('faker');
-const Restaurant = require('./Restaurant');
+const schema = require('./schema');
 const db = require('./index');
 
 faker.locale = 'de';
@@ -71,7 +71,7 @@ for (let i = 0; i < 100; i += 1) {
 }
 
 const insertSampleData = function () {
-  Restaurant.Restaurant.create(restaurantSampleData)
+  schema.Restaurant.create(restaurantSampleData)
     .then(() => db.close());
 };
 
