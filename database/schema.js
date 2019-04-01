@@ -60,30 +60,4 @@ const restaurantSchema = new mongoose.Schema({
 
 const Restaurant = mongoose.model('Restaurant', restaurantSchema);
 
-
-const find = (cb) => {
-  Restaurant.find().exec((err, docs) => {
-    if (err) {
-      cb(err);
-    } else {
-      console.log(docs);
-      cb(null, docs);
-    }
-  });
-};
-
-const findID = (_id, cb) => {
-  Restaurant.findById(_id).exec((err, docs) => {
-    if (err) {
-      cb(err);
-    } else {
-      console.log(docs);
-      cb(null, docs);
-    }
-  });
-};
-
-
-module.exports.Restaurant = Restaurant;
-module.exports.findID = findID;
-module.exports.find = find;
+module.exports = { Restaurant };

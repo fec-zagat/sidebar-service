@@ -1,12 +1,18 @@
 const faker = require('faker');
-const Restaurant = require('./Restaurant');
+const schema = require('./schema');
 const db = require('./index');
 
 faker.locale = 'de';
+const restaurantSampleData = [];
 
-const sampleData = [
-  {
-    name: `The ${(faker.lorem.word()[0]).toUpperCase()}${faker.lorem.word()}`,
+const capitalize = (s) => {
+  if (typeof s !== 'string') return '';
+  return s.charAt(0).toUpperCase() + s.slice(1);
+};
+
+for (let i = 0; i < 100; i += 1) {
+  const sampleData = {
+    name: `${capitalize(faker.lorem.word())} ${capitalize(faker.lorem.word())} `,
     header_description: faker.lorem.words(3),
     body_description: faker.lorem.paragraph(5, 8),
     cuisine: faker.random.arrayElement(['Argentina', 'Cajun', 'Estonian', 'Chinese', 'Filipino',
@@ -20,15 +26,15 @@ const sampleData = [
       service: faker.finance.amount(3, 5, 1),
     },
     address:
-    {
-      street: faker.address.streetAddress(),
-      city: faker.address.city(),
-      zipcode: faker.address.zipCode(),
-      district: faker.lorem.words(),
-      country: faker.address.country(),
-      latitude: faker.address.latitude(),
-      longtitude: faker.address.longitude(),
-    },
+      {
+        street: faker.address.streetAddress(),
+        city: faker.address.city(),
+        zipcode: faker.address.zipCode(),
+        district: faker.lorem.words(),
+        country: faker.address.country(),
+        latitude: faker.address.latitude(),
+        longtitude: faker.address.longitude(),
+      },
     phone_number: faker.phone.phoneNumberFormat(),
     official_website: faker.internet.domainName(),
     open_hours: {
@@ -60,10 +66,13 @@ const sampleData = [
       groups: faker.random.boolean(),
       outdoor_seating: faker.random.boolean(),
     },
-  }];
+  };
+  restaurantSampleData.push(sampleData);
+}
 
 const insertSampleData = function () {
-  Restaurant.Restaurant.create(sampleData)
+  schema.Restaurant.create(restaurantSampleData)
+    .then(() => db.close());
 };
 
 insertSampleData();
