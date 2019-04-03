@@ -6,13 +6,13 @@ const db = require('./index.js');
 mongoose.Promise = global.Promise;
 
 const restaurantSchema = new mongoose.Schema({
-  restaurant_id: Number,
+  restaurantID: Number,
   name: String,
-  header_description: String,
-  body_description: String,
+  headerDescription: String,
+  bodyDescription: String,
   cuisine: String,
   price: String,
-  zagat_review: {
+  zagatReview: {
     food: Number,
     decor: Number,
     service: Number,
@@ -26,36 +26,36 @@ const restaurantSchema = new mongoose.Schema({
     latitude: Number,
     longtitude: Number,
   },
-  phone_number: String,
-  official_website: String,
-  open_hours: {
-    Monday: String,
-    Tuesday: String,
-    Wednesday: String,
-    Thursday: String,
-    Friday: String,
-    Saturday: String,
-    Sunday: String,
+  phoneNumber: String,
+  officialWebsite: String,
+  openHours: {
+    MonOH: String,
+    TuesOH: String,
+    WednOH: String,
+    ThursOH: String,
+    FriOH: String,
+    SatOH: String,
+    SunOH: String,
   },
-  close_hours: {
-    Monday: String,
-    Tuesday: String,
-    Wednesday: String,
-    Thursday: String,
-    Friday: String,
-    Saturday: String,
-    Sunday: String,
+  closeHours: {
+    MonCH: String,
+    TuesCH: String,
+    WedCH: String,
+    ThursCH: String,
+    FriCH: String,
+    SatCH: String,
+    SunCH: String,
   },
-  known_for: {
+  knownFor: {
     breakfast: Boolean,
     lunch: Boolean,
     dinner: Boolean,
     takeout: Boolean,
     quickbites: Boolean,
     kids: Boolean,
-    online_reservations: Boolean,
+    onlineReservations: Boolean,
     groups: Boolean,
-    outdoor_seating: Boolean,
+    outdoorSeating: Boolean,
   },
 });
 
