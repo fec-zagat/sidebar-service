@@ -8,9 +8,9 @@ module.exports = {
 
   moduleFileExtensions: ['js', 'json', 'jsx'],
 
-  setupFiles: ['<rootDir>/test/enzyme.config.js'],
+  setupFiles: ['<rootDir>/tests/enzyme.config.js'],
 
-  testEnvironment: 'jsdom',
+  testEnvironment: 'node',
 
   testMatch: ['**/__tests__/**/*.js?(x)', '**/?(*.)+(spec|test).js?(x)'],
 
