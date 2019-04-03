@@ -10,8 +10,9 @@ const capitalize = (s) => {
   return s.charAt(0).toUpperCase() + s.slice(1);
 };
 
-for (let i = 0; i < 100; i += 1) {
+for (let i = 1; i <= 100; i += 1) {
   const sampleData = {
+    restaurant_id: i,
     name: `${capitalize(faker.lorem.word())} ${capitalize(faker.lorem.word())} `,
     header_description: faker.lorem.words(3),
     body_description: faker.lorem.paragraph(5, 8),
@@ -76,3 +77,5 @@ const insertSampleData = function () {
 };
 
 insertSampleData();
+
+module.exports = restaurantSampleData;

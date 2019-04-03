@@ -6,6 +6,7 @@ const db = require('./index.js');
 mongoose.Promise = global.Promise;
 
 const restaurantSchema = new mongoose.Schema({
+  restaurant_id: Number,
   name: String,
   header_description: String,
   body_description: String,
