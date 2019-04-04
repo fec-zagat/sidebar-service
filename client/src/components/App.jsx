@@ -1,12 +1,64 @@
 import React, { Component } from 'react';
 import Main from './Main';
+import SideBar from './SideBar';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      details: {},
+      details: {
+        name: '',
+        headerDescription: '',
+        bodyDescription: '',
+        cuisine: '',
+        price: '',
+        zagatReview: {
+          food: '',
+          decor: '',
+          service: '',
+        },
+        address: {
+          street: '',
+          city: '',
+          zipcode: '',
+          district: '',
+          country: '',
+          latitude: '',
+          longtitude: '',
+        },
+        phoneNumber: '',
+        officialWebsite: '',
+        openHours: {
+          MonOH: '',
+          TuesOH: '',
+          WedOH: '',
+          ThursOH: '',
+          FriOH: '',
+          SatOH: '',
+          SunOH: '',
+        },
+        closeHours: {
+          MonCH: '',
+          TuesCH: '',
+          WedCH: '',
+          ThursCH: '',
+          FriCH: '',
+          SatCH: '',
+          SunCH: '',
+        },
+        knownFor: {
+          breakfast: '',
+          lunch: '',
+          dinner: '',
+          takeout: '',
+          quickbited: '',
+          kids: '',
+          onlineReservations: '',
+          groups: '',
+          outdoorSeating: '',
+        },
+      },
     };
   }
 
@@ -31,7 +83,6 @@ class App extends Component {
           breakfast, lunch, dinner, takeout, quickbited, kids, onlineReservations, groups,
           outdoorSeating,
         } = response.knownFor;
-
         this.setState({
           details: {
             name,
@@ -93,7 +144,14 @@ class App extends Component {
   render() {
     const { details } = this.state;
     return (
-      <Main details={details} />
+      <div>
+        <div>
+          <Main details={details} />
+        </div>
+        <div>
+          <SideBar details={details} />
+        </div>
+      </div>
     );
   }
 }
