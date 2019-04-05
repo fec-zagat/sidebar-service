@@ -10,17 +10,18 @@ const capitalize = (s) => {
   return s.charAt(0).toUpperCase() + s.slice(1);
 };
 
-for (let i = 0; i < 100; i += 1) {
+for (let i = 1; i <= 100; i += 1) {
   const sampleData = {
+    restaurantID: i,
     name: `${capitalize(faker.lorem.word())} ${capitalize(faker.lorem.word())} `,
-    header_description: faker.lorem.words(3),
-    body_description: faker.lorem.paragraph(5, 8),
+    headerDescription: faker.lorem.words(3),
+    bodyDescription: faker.lorem.paragraph(5, 8),
     cuisine: faker.random.arrayElement(['Argentina', 'Cajun', 'Estonian', 'Chinese', 'Filipino',
       'Italian', 'Korean', 'Mexican', 'Polish', 'Romanian', 'Russian', 'Thai', 'Pakistani',
       'Japanese', 'Nepalese', 'Peruvian', 'Portuguese', 'Brazilian', 'Malaysian', 'Indian',
     ]),
     price: faker.random.arrayElement(['$', '$$', '$$$']),
-    zagat_review: {
+    zagatReview: {
       food: faker.finance.amount(3, 5, 1),
       decor: faker.finance.amount(3, 5, 1),
       service: faker.finance.amount(3, 5, 1),
@@ -35,36 +36,36 @@ for (let i = 0; i < 100; i += 1) {
         latitude: faker.address.latitude(),
         longtitude: faker.address.longitude(),
       },
-    phone_number: faker.phone.phoneNumberFormat(),
-    official_website: faker.internet.domainName(),
-    open_hours: {
-      Monday: faker.random.arrayElement(['8:00AM', '9:00AM', '10:00AM']),
-      Tuesday: faker.random.arrayElement(['8:00AM', '9:00AM', '10:00AM']),
-      Wednesday: faker.random.arrayElement(['8:00AM', '9:00AM', '10:00AM']),
-      Thursday: faker.random.arrayElement(['8:00AM', '9:00AM', '10:00AM']),
-      Friday: faker.random.arrayElement(['8:00AM', '9:00AM', '10:00AM']),
-      Saturday: faker.random.arrayElement(['8:00AM', '9:00AM', '10:00AM']),
-      Sunday: faker.random.arrayElement(['8:00AM', '9:00AM', '10:00AM']),
+    phoneNumber: faker.phone.phoneNumberFormat(),
+    officialWebsite: faker.internet.domainName(),
+    openHours: {
+      MonOH: faker.random.arrayElement(['8:00AM', '9:00AM', '10:00AM']),
+      TuesOH: faker.random.arrayElement(['8:00AM', '9:00AM', '10:00AM']),
+      WedOH: faker.random.arrayElement(['8:00AM', '9:00AM', '10:00AM']),
+      ThursOH: faker.random.arrayElement(['8:00AM', '9:00AM', '10:00AM']),
+      FriOH: faker.random.arrayElement(['8:00AM', '9:00AM', '10:00AM']),
+      SatOH: faker.random.arrayElement(['8:00AM', '9:00AM', '10:00AM']),
+      SunOH: faker.random.arrayElement(['8:00AM', '9:00AM', '10:00AM']),
     },
-    close_hours: {
-      Monday: faker.random.arrayElement(['8:00PM', '9:00PM', '10:00PM']),
-      Tuesday: faker.random.arrayElement(['8:00PM', '9:00PM', '10:00PM']),
-      Wednesday: faker.random.arrayElement(['8:00PM', '9:00PM', '10:00PM']),
-      Thursday: faker.random.arrayElement(['8:00PM', '9:00PM', '10:00PM']),
-      Friday: faker.random.arrayElement(['8:00PM', '9:00PM', '10:00PM']),
-      Saturday: faker.random.arrayElement(['8:00PM', '9:00PM', '10:00PM']),
-      Sunday: faker.random.arrayElement(['8:00PM', '9:00PM', '10:00PM']),
+    closeHours: {
+      MonCH: faker.random.arrayElement(['8:00PM', '9:00PM', '10:00PM']),
+      TuesCH: faker.random.arrayElement(['8:00PM', '9:00PM', '10:00PM']),
+      WedCH: faker.random.arrayElement(['8:00PM', '9:00PM', '10:00PM']),
+      ThursCH: faker.random.arrayElement(['8:00PM', '9:00PM', '10:00PM']),
+      FriCH: faker.random.arrayElement(['8:00PM', '9:00PM', '10:00PM']),
+      SatCH: faker.random.arrayElement(['8:00PM', '9:00PM', '10:00PM']),
+      SunCH: faker.random.arrayElement(['8:00PM', '9:00PM', '10:00PM']),
     },
-    known_for: {
+    knownFor: {
       breakfast: faker.random.boolean(),
       lunch: faker.random.boolean(),
       dinner: faker.random.boolean(),
       takeout: faker.random.boolean(),
       quickbites: faker.random.boolean(),
       kids: faker.random.boolean(),
-      online_reservations: faker.random.boolean(),
+      onlineReservations: faker.random.boolean(),
       groups: faker.random.boolean(),
-      outdoor_seating: faker.random.boolean(),
+      outdoorSeating: faker.random.boolean(),
     },
   };
   restaurantSampleData.push(sampleData);
@@ -76,3 +77,5 @@ const insertSampleData = function () {
 };
 
 insertSampleData();
+
+module.exports = restaurantSampleData;

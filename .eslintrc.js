@@ -4,6 +4,7 @@ module.exports = {
     browser: true,
     es6: true,
     node: true,
+    jest: true,
   },
   extends: 'airbnb',
   globals: {
@@ -21,5 +22,7 @@ module.exports = {
     'react',
   ],
   rules: {
+    "react/forbid-prop-types": [0, { "forbid": []}],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
   },
 };
