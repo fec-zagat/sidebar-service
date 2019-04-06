@@ -12,28 +12,36 @@ const Main = (props) => {
 
   return (
     <div className="mainBox">
-      <div className="nameBox">
-        <span>{name}</span>
+      <h1>{name}</h1>
+      <p><span>{headerDescription}</span></p>
+
+      <div className="cuisineDistrictPrice">
+        <div className="d-inline m-1">{cuisine}</div>
+        &middot;
+        <div className="d-inline m-1">{district}</div>
+        &middot;
+        <div className="d-inline m-1">{price}</div>
       </div>
-      <div className="headerDescriptionBox">
-        <span>{headerDescription}</span>
+      <div className="mainDivider">
+        <img src="./images/logo.svg" alt="logo" />
+        &nbsp;
       </div>
-      <div className="cuisineDistrictPriceBox">
-        <span>{cuisine}</span>
-        <span>{district}</span>
-        <span>{price}</span>
+      <h3 className="theTagazReview">THE TAGAZ REVIEW</h3>
+      <div className="foodDecorService border-bottom text-center">
+        <div className="d-inline-block border-right">
+          <h2>{food}</h2>
+          <h6>FOOD</h6>
+        </div>
+        <div className="d-inline-block border-right">
+          <h2>{decor}</h2>
+          <h6>DECOR</h6>
+        </div>
+        <div className="d-inline-block">
+          <h2>{service}</h2>
+          <h6>SERVICE</h6>
+        </div>
       </div>
-      <div>
-        <h1>THE TAGAZ REVIEW</h1>
-      </div>
-      <div>
-        <div className="foodBox">{food}</div>
-        <div className="decorBox">{decor}</div>
-        <div className="serviceBox">{service}</div>
-      </div>
-      <div className="bodyDescriptionBox">
-        <span>{bodyDescription}</span>
-      </div>
+      <span>{bodyDescription}</span>
     </div>
   );
 };
