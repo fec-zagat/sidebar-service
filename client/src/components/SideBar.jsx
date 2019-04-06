@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Hours from './Hours';
+import Map from './Map';
 
 class SideBar extends Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class SideBar extends Component {
   render() {
     const { details } = this.props;
     const {
-      openHours, closeHours, address, phoneNumber, officialWebsite,
+      openHours, closeHours, address, phoneNumber, officialWebsite, 
     } = details;
     const {
       street, city, zipcode, country,
@@ -35,10 +36,13 @@ class SideBar extends Component {
           {phoneNumber}
         </div>
         <div>
-          {officialWebsite}
+          <a href={officialWebsite}>
+            {officialWebsite}
+          </a>
         </div>
         <div>
           <h1>Get Directions</h1>
+          <Map address={address} />
         </div>
       </div>
     );
