@@ -5,10 +5,10 @@ import '../styles/main.css';
 const Main = (props) => {
   const { details } = props;
   const {
-    name, headerDescription, bodyDescription, cuisine, price,
+    name, headerDescription, bodyDescription, cuisine, price, zagatReview, address,
   } = details;
-  const { food, decor, service } = details.zagatReview;
-  const { district } = details.address;
+  const { food, decor, service } = zagatReview;
+  const { district } = address;
 
   return (
     <div className="mainBox">
