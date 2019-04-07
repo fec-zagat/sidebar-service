@@ -14,35 +14,62 @@ class SideBar extends Component {
   render() {
     const { details } = this.props;
     const {
-      openHours, closeHours, address, phoneNumber, officialWebsite, 
+      openHours, closeHours, address, phoneNumber, officialWebsite,
+      address: {
+        street, city, zipcode, country,
+      },
     } = details;
-    const {
-      street, city, zipcode, country,
-    } = address;
     return (
       <div>
         <div>
           <Hours openHours={openHours} closeHours={closeHours} />
         </div>
-        <div>
-          <span>
-            { street }
-            { city }
-            { zipcode }
-            { country }
-          </span>
+        <div className="d-flex justify-content-start">
+          <div>
+            <i className="fas fa-map-marker-alt" />
+          </div>
+          <div>
+            <span>
+              {street}
+              &#44;
+              &nbsp;
+              {city}
+              &#44;
+              &nbsp;
+              {zipcode}
+              &#44;
+            </span>
+            <div>
+              {country}
+            </div>
+          </div>
         </div>
-        <div>
-          {phoneNumber}
+        <div className="d-flex justify-content-start">
+          <div>
+            <i className="fas fa-phone" />
+          </div>
+          <div>
+            {phoneNumber}
+          </div>
         </div>
-        <div>
-          <a href={officialWebsite}>
-            {officialWebsite}
-          </a>
+        <div className="d-flex justify-content-start">
+          <div>
+            <i className="far fa-credit-card" />
+          </div>
+          <div>
+            <a href={officialWebsite}>
+              {officialWebsite}
+            </a>
+          </div>
         </div>
-        <div>
-          <h1>Get Directions</h1>
-          <Map address={address} />
+        <div className="d-flex justify-content-start">
+          <div>
+            <i className="fas fa-directions" />
+          </div>
+          <div>
+            <h6>Get Directions</h6>
+            <Map address={address} />
+          </div>
         </div>
       </div>
     );
