@@ -1,0 +1,29 @@
+.mainBox {
+  box-sizing: border-box;
+  width: 887.23px;
+  height: 514px;
+}
+
+.nameBox {
+  box-sizing: border-box;
+  width: 870.23px;
+  height: 72px;
+}
+
+.headerDescriptionBox {
+  box-sizing: border-box;
+  width: 870.23px;
+  height: 26px;
+}
+
+.cuisineDistrictPriceBox {
+  box-sizing: border-box;
+  width: 870.23px;
+  height: 26px;
+}
+
+.bodyDescriptionBox {
+  box-sizing: border-box;
+  width: 870.23px;
+  height: 26px;
+}

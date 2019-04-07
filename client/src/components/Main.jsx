@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../styles/main.css';
 
 const Main = (props) => {
   const { details } = props;
@@ -10,14 +11,14 @@ const Main = (props) => {
   const { district } = details.address;
 
   return (
-    <div>
-      <div>
+    <div className="mainBox">
+      <div className="nameBox">
         <span>{name}</span>
       </div>
-      <div>
+      <div className="headerDescriptionBox">
         <span>{headerDescription}</span>
       </div>
-      <div>
+      <div className="cuisineDistrictPriceBox">
         <span>{cuisine}</span>
         <span>{district}</span>
         <span>{price}</span>
@@ -26,11 +27,11 @@ const Main = (props) => {
         <h1>THE TAGAZ REVIEW</h1>
       </div>
       <div>
-        <span>{food}</span>
-        <span>{decor}</span>
-        <span>{service}</span>
+        <div className="foodBox">{food}</div>
+        <div className="decorBox">{decor}</div>
+        <div className="serviceBox">{service}</div>
       </div>
-      <div>
+      <div className="bodyDescriptionBox">
         <span>{bodyDescription}</span>
       </div>
     </div>

@@ -31,7 +31,7 @@ const restaurantSchema = new mongoose.Schema({
   openHours: {
     MonOH: String,
     TuesOH: String,
-    WednOH: String,
+    WedOH: String,
     ThursOH: String,
     FriOH: String,
     SatOH: String,

@@ -1,37 +1,49 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Hours from './Hours';
 
-const SideBar = (props) => {
-  const style1 = {
-    textAlign: 'center',
-  };
-  const { details } = props;
-  const { address, phoneNumber, officialWebsite } = details;
-  const {
-    street, city, zipcode, country,
-  } = address;
-  return (
-    <div style={style1}>
+class SideBar extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+    };
+  }
+
+  render() {
+    const { details } = this.props;
+    const {
+      openHours, closeHours, address, phoneNumber, officialWebsite,
+    } = details;
+    const {
+      street, city, zipcode, country,
+    } = address;
+    return (
       <div>
-        <span>
-          {street}
-          {city}
-          {zipcode}
-          {country}
-        </span>
+        <div>
+          <Hours openHours={openHours} closeHours={closeHours} />
+        </div>
+        <div>
+          <span>
+            { street }
+            { city }
+            { zipcode }
+            { country }
+          </span>
+        </div>
+        <div>
+          {phoneNumber}
+        </div>
+        <div>
+          {officialWebsite}
+        </div>
+        <div>
+          <h1>Get Directions</h1>
+        </div>
       </div>
-      <div>
-        {phoneNumber}
-      </div>
-      <div>
-        {officialWebsite}
-      </div>
-      <div>
-        <h1>Get Directions</h1>
-      </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default SideBar;
 
