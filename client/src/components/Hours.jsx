@@ -21,20 +21,31 @@ class Hours extends Component {
 
   render() {
     const { hoursToggle } = this.state;
-    const { openHours, closeHours } = this.props;
     const {
-      MonOH, TuesOH, WedOH, ThursOH, FriOH, SatOH, SunOH,
-    } = openHours;
-    const {
-      MonCH, TuesCH, WedCH, ThursCH, FriCH, SatCH, SunCH,
-    } = closeHours;
+      openHours: {
+        MonOH, TuesOH, WedOH, ThursOH, FriOH, SatOH, SunOH,
+      },
+      closeHours: {
+        MonCH, TuesCH, WedCH, ThursCH, FriCH, SatCH, SunCH,
+      },
+    } = this.props;
 
-    if (hoursToggle === true) {
+    if (hoursToggle) {
       return (
         <div>
+
           <div role="row" tabIndex="0" onKeyPress={this.handleKeyPress} onClick={e => this.handleHoursToggle(e)}>
-            <h1>Open Now</h1>
+            <div className="d-flex justify-content-start">
+              <div className="hoursLogo">
+                <i className="far fa-clock" />
+              </div>
+              <h6>Open Now</h6>
+              <div>
+                <i className="fas fa-angle-up" />
+              </div>
+            </div>
           </div>
+
           <div>
             <div className="d-flex justify-content-between mb-2">
               <div className="">Monday</div>
@@ -105,7 +116,15 @@ class Hours extends Component {
     }
     return (
       <div role="row" tabIndex="0" onKeyPress={this.handleKeyPress} onClick={e => this.handleHoursToggle(e)}>
-        <h1>Open Now</h1>
+        <div className="d-flex justify-content-start">
+          <div className="hoursLogo">
+            <i className="far fa-clock" />
+          </div>
+          <h6>Open Now</h6>
+          <div>
+            <i className="fas fa-angle-down" />
+          </div>
+        </div>
       </div>
     );
   }
