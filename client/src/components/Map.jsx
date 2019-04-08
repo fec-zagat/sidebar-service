@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
+import { Map, GoogleApiWrapper } from 'google-maps-react';
 import PropTypes from 'prop-types';
 
-class Map extends Component {
+const mapStyles = {
+  width: '100%',
+  height: '100%',
+};
+
+export class MapContainer extends Component {
   constructor(props) {
     super(props);
 
@@ -10,24 +16,26 @@ class Map extends Component {
   }
 
   render() {
-    const { address } = this.props;
+    const { address, google } = this.props;
     const { latitude, longtitude } = address;
     return (
-      <div>
-        <iframe
-          title="googleMap"
-          height="450"
-          frameBorder="0"
-          className="mapIframe"
-          src={this.mapURL(latitude, longtitude)}
-        />
-      </div>
+      <Map
+        google={google}
+        zoom={14}
+        style={mapStyles}
+        initialCenter={{
+          lat: latitude,
+          lng: longtitude,
+        }}
+      />
     );
   }
 }
 
-export default Map;
-
 Map.propTypes = {
   address: PropTypes.object.isRequired,
 };
+
+export default GoogleApiWrapper({
+  apiKey: 'AIzaSyAHVxGlmHpg2eeLdURo8ZjJSVLRc_7672k',
+})(Map);
