@@ -2,3 +2,31 @@
   border-bottom: 1px dotted #666;
   font-size: 7px;
 }
+
+.days {
+  margin-left: 26px;
+}
+
+.openNow {
+  margin-bottom: 20px;
+}
+
+.fa-angle-up {
+  margin-left: 10px;
+}
+
+.fa-angle-down {
+  margin-left: 10px;
+}
+
+.hoursLogo {
+  margin-right: 10px;
+}
+
+.fa-clock {
+  color: #b70038;
+}
+
+.hoverRed:hover {
+  color: #b70038;
+}
