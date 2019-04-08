@@ -4,7 +4,6 @@
 
 .foodDecorService {
   width: 30%;
-  margin-bottom: 20px;
 }
 
 .foodDecorService div {
@@ -32,4 +31,8 @@
 
 .cuisineDistrictPrice {
   margin-bottom: 20px;
+}
+
+.foodDecorServiceLine {
+  width: 215px;
 }
