@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Hours from './Hours';
 import Map from './Map';
+import '../styles/sidebar.css';
 
 class SideBar extends Component {
   constructor(props) {
@@ -20,15 +21,15 @@ class SideBar extends Component {
       },
     } = details;
     return (
-      <div>
+      <div className="d-flex flex-column">
         <div>
           <Hours openHours={openHours} closeHours={closeHours} />
         </div>
-        <div className="d-flex justify-content-start">
+        <div className="addressBox d-flex justify-content-start">
           <div>
             <i className="fas fa-map-marker-alt" />
           </div>
-          <div>
+          <div className="hoverRed">
             <span>
               {street}
               &#44;
@@ -44,7 +45,7 @@ class SideBar extends Component {
             </div>
           </div>
         </div>
-        <div className="d-flex justify-content-start">
+        <div className="phoneBox hoverRed d-flex justify-content-start">
           <div>
             <i className="fas fa-phone" />
           </div>
@@ -52,17 +53,17 @@ class SideBar extends Component {
             {phoneNumber}
           </div>
         </div>
-        <div className="d-flex justify-content-start">
+        <div className="officialWebsiteBox d-flex justify-content-start">
           <div>
             <i className="far fa-credit-card" />
           </div>
-          <div>
-            <a href={officialWebsite}>
+          <div className="hoverRed">
+            <a>
               {officialWebsite}
             </a>
           </div>
         </div>
-        <div className="d-flex justify-content-start">
+        <div className="getDirectionsBox hoverRed d-flex justify-content-start">
           <div>
             <i className="fas fa-directions" />
           </div>
