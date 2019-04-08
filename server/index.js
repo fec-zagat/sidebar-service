@@ -5,7 +5,7 @@ const path = require('path');
 const { findOneRestaurant } = require('../database/methods');
 
 const app = express();
-const port = 3333;
+const port = 3003;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
