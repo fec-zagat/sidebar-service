@@ -5,16 +5,14 @@ import '../styles/main.css';
 const Main = (props) => {
   const { details } = props;
   const {
-    name, headerDescription, bodyDescription, cuisine, price, zagatReview, address,
+    name, headerDescription, bodyDescription, cuisine, price,
+    zagatReview: { food, decor, service }, address: { district },
   } = details;
-  const { food, decor, service } = zagatReview;
-  const { district } = address;
 
   return (
     <div className="mainBox">
       <h1>{name}</h1>
       <p><span>{headerDescription}</span></p>
-
       <div className="cuisineDistrictPrice">
         <div className="d-inline m-1">{cuisine}</div>
         &middot;
@@ -26,8 +24,8 @@ const Main = (props) => {
         <img src="./images/logo.svg" alt="logo" />
         &nbsp;
       </div>
-      <h3 className="theTagazReview">THE TAGAZ REVIEW</h3>
-      <div className="foodDecorService border-bottom text-center">
+      <h6 className="theTagazReview mb-3">THE TAGAZ REVIEW</h6>
+      <div className="foodDecorService text-center mt-2">
         <div className="d-inline-block border-right">
           <h2>{food}</h2>
           <h6>FOOD</h6>
@@ -41,6 +39,7 @@ const Main = (props) => {
           <h6>SERVICE</h6>
         </div>
       </div>
+      <div className="foodDecorServiceLine border-bottom mb-3 mt-3" />
       <span>{bodyDescription}</span>
     </div>
   );
