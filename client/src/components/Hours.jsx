@@ -7,7 +7,7 @@ class Hours extends Component {
     super(props);
 
     this.state = {
-      hoursToggle: false,
+      hoursToggle: true,
     };
   }
 
@@ -34,77 +34,80 @@ class Hours extends Component {
       return (
         <div>
 
-          <div role="row" tabIndex="0" onKeyPress={this.handleKeyPress} onClick={e => this.handleHoursToggle(e)}>
+          <div className="openNow" role="row" tabIndex="0" onKeyPress={this.handleKeyPress} onClick={e => this.handleHoursToggle(e)}>
             <div className="d-flex justify-content-start">
-              <div className="hoursLogo">
+              <div className="hoursLogo mt-3">
                 <i className="far fa-clock" />
               </div>
-              <h6>Open Now</h6>
-              <div>
-                <i className="fas fa-angle-up" />
+              <div className="hoverRed d-flex justify-content-start">
+                <h6>Open Now</h6>
+                <div>
+                  <i className="fas fa-angle-up mt-3" />
+                </div>
               </div>
+
             </div>
           </div>
 
           <div>
             <div className="d-flex justify-content-between mb-2">
-              <div className="">Monday</div>
-              <div className="spaceBetweenHours flex-fill align-self-center">&nbsp;</div>
-              <div className="">
+              <div className="days">Monday</div>
+              <div className="spaceBetweenHours flex-fill align-self-center dots">&nbsp;</div>
+              <div>
                 {MonOH}
                 -
                 {MonCH}
               </div>
             </div>
             <div className="d-flex justify-content-between mb-2">
-              <div className="">Tuesday</div>
-              <div className="spaceBetweenHours flex-fill align-self-center">&nbsp;</div>
-              <div className="">
+              <div className="days">Tuesday</div>
+              <div className="spaceBetweenHours flex-fill align-self-center dots">&nbsp;</div>
+              <div>
                 {TuesOH}
                 -
                 {TuesCH}
               </div>
             </div>
             <div className="d-flex justify-content-between mb-2">
-              <div className="">Wednesday</div>
-              <div className="spaceBetweenHours flex-fill align-self-center">&nbsp;</div>
-              <div className="">
+              <div className="days">Wednesday</div>
+              <div className="spaceBetweenHours flex-fill align-self-center dots">&nbsp;</div>
+              <div>
                 {WedOH}
                 -
                 {WedCH}
               </div>
             </div>
             <div className="d-flex justify-content-between mb-2">
-              <div className="">Thursday</div>
-              <div className="spaceBetweenHours flex-fill align-self-center">&nbsp;</div>
-              <div className="">
+              <div className="days">Thursday</div>
+              <div className="spaceBetweenHours flex-fill align-self-center dots">&nbsp;</div>
+              <div>
                 {ThursOH}
                 -
                 {ThursCH}
               </div>
             </div>
             <div className="d-flex justify-content-between mb-2">
-              <div className="">Friday</div>
-              <div className="spaceBetweenHours flex-fill align-self-center">&nbsp;</div>
-              <div className="">
+              <div className="days">Friday</div>
+              <div className="spaceBetweenHours flex-fill align-self-center dots">&nbsp;</div>
+              <div>
                 {FriOH}
                 -
                 {FriCH}
               </div>
             </div>
             <div className="d-flex justify-content-between mb-2">
-              <div className="">Saturday</div>
-              <div className="spaceBetweenHours flex-fill align-self-center">&nbsp;</div>
-              <div className="">
+              <div className="days">Saturday</div>
+              <div className="spaceBetweenHours flex-fill align-self-center dots">&nbsp;</div>
+              <div>
                 {SatOH}
                 -
                 {SatCH}
               </div>
             </div>
             <div className="d-flex justify-content-between mb-2">
-              <div className="">Sunday</div>
-              <div className="spaceBetweenHours flex-fill align-self-center">&nbsp;</div>
-              <div className="">
+              <div className="days">Sunday</div>
+              <div className="spaceBetweenHours flex-fill align-self-center dots">&nbsp;</div>
+              <div>
                 {SunOH}
                 -
                 {SunCH}
