@@ -1,0 +1,40 @@
+
+.fa-map-marker-alt {
+  margin-right: 20px;
+  color: #b70038;
+}
+
+.fa-phone {
+  margin-right: 20px;
+  color: #b70038;
+}
+
+.fa-credit-card {
+  margin-right: 20px;
+  color: #b70038;
+}
+
+.fa-directions {
+  margin-right: 20px;
+  color: #b70038;
+}
+
+.phoneBox {
+  margin-top: 15px;
+}
+
+.addressBox {
+  margin-top: 10px;
+}
+
+.officialWebsiteBox {
+  margin-top: 15px;
+}
+
+.getDirectionsBox {
+  margin-top: 15px;
+}
+
+.hoverRed:hover {
+  color: #b70038;
+}
