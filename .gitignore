@@ -24,4 +24,12 @@ coverage
 build/
 dist/
 
+
 /public/bundle.js
+
+
+#compiled component
+/public/bundle.js
+
+#Google map API
+client/src/config/googleMap.js
