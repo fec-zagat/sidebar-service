@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper } from 'google-maps-react';
 import PropTypes from 'prop-types';
+import GOOGLEMAP_API_KEY from '../config/googleMap';
 
 const mapStyles = {
   width: '100%',
@@ -11,7 +12,7 @@ export class MapContainer extends Component {
   constructor(props) {
     super(props);
 
-    this.apiKey = 'AIzaSyAHVxGlmHpg2eeLdURo8ZjJSVLRc_7672k';
+    this.apiKey = GOOGLEMAP_API_KEY;
     this.mapURL = (latitude, longtitude) => `https://www.google.com/maps/embed/v1/place?q=${latitude},${longtitude}&key=${this.apiKey}`;
   }
 
