@@ -1,29 +1,40 @@
-.mainBox {
-  box-sizing: border-box;
-  width: 887.23px;
-  height: 514px;
+.cuisineDistrictPrice div {
+  text-decoration: underline;
 }
 
-.nameBox {
-  box-sizing: border-box;
-  width: 870.23px;
-  height: 72px;
+.foodDecorService {
+  text-transform: uppercase;
+  width: 30%;
 }
 
-.headerDescriptionBox {
-  box-sizing: border-box;
-  width: 870.23px;
-  height: 26px;
+.foodDecorService div {
+  width: 33%;
+  height: 50px;
 }
 
-.cuisineDistrictPriceBox {
-  box-sizing: border-box;
-  width: 870.23px;
-  height: 26px;
+.mainDivider {
+  position: relative;
+  border: 1px solid black;
+  border-left: 0px;
+  border-right: 0px;
+  font-size: 2px;
 }
 
-.bodyDescriptionBox {
-  box-sizing: border-box;
-  width: 870.23px;
-  height: 26px;
+.mainDivider img {
+  position: absolute;
+  right: 100px;
+  top: -7px;
+}
+
+.theTagazReview {
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+.cuisineDistrictPrice {
+  margin-bottom: 20px;
+}
+
+.foodDecorServiceLine {
+  width: 215px;
 }

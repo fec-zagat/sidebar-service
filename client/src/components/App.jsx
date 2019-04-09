@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Main from './Main';
 import SideBar from './SideBar';
-import Map from './Map';
-import FaceTime from './FaceTime';
 
 class App extends Component {
   constructor(props) {
@@ -65,7 +63,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3333/r')
+    fetch('http://localhost:3003/r')
       .then(res => res.json())
       .then((response) => {
         this.setState({
@@ -78,18 +76,18 @@ class App extends Component {
   render() {
     const { info } = this.state;
     return (
-      <div>
-        <div>
-          <Main details={info} />
-        </div>
-        <div>
-          <SideBar details={info} />
-        </div>
-        <div>
-          <FaceTime />
-        </div>
-        <div>
-          <Map />
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-8">
+            <div className="shadow p-5 m-2">
+              <Main details={info} />
+            </div>
+          </div>
+          <div className="col-4">
+            <div className="shadow p-5 m-2">
+              <SideBar details={info} />
+            </div>
+          </div>
         </div>
       </div>
     );

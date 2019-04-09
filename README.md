@@ -25,8 +25,10 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 - Node 6.13.0
 - etc
+- Get Google API from https://developers.google.com/maps/documentation/urls/guide
 
 ## Development
+- bootstrap docs https://getbootstrap.com/docs/4.3/getting-started/introduction/
 
 ### Installing Dependencies
 

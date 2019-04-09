@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import '../styles/hours.css';
 
 class Hours extends Component {
   constructor(props) {
@@ -20,73 +21,113 @@ class Hours extends Component {
 
   render() {
     const { hoursToggle } = this.state;
-    const { openHours, closeHours } = this.props;
     const {
-      MonOH, TuesOH, WedOH, ThursOH, FriOH, SatOH, SunOH,
-    } = openHours;
-    const {
-      MonCH, TuesCH, WedCH, ThursCH, FriCH, SatCH, SunCH,
-    } = closeHours;
+      openHours: {
+        MonOH, TuesOH, WedOH, ThursOH, FriOH, SatOH, SunOH,
+      },
+      closeHours: {
+        MonCH, TuesCH, WedCH, ThursCH, FriCH, SatCH, SunCH,
+      },
+    } = this.props;
 
-    if (hoursToggle === true) {
+    if (hoursToggle) {
       return (
         <div>
-          <div role="row" tabIndex="0" onKeyPress={this.handleKeyPress} onClick={e => this.handleHoursToggle(e)}>
-            <h1>Open Now</h1>
+
+          <div className="openNow" role="row" tabIndex="0" onKeyPress={this.handleKeyPress} onClick={e => this.handleHoursToggle(e)}>
+            <div className="d-flex justify-content-start">
+              <div className="hoursLogo mt-3">
+                <i className="far fa-clock" />
+              </div>
+              <div className="hoverRed d-flex justify-content-start">
+                <h6>Open Now</h6>
+                <div>
+                  <i className="fas fa-angle-up mt-3" />
+                </div>
+              </div>
+
+            </div>
           </div>
 
           <div>
-            <ul>
-              <li>
-                Monday............
+            <div className="d-flex justify-content-between mb-2">
+              <div className="days">Monday</div>
+              <div className="spaceBetweenHours flex-fill align-self-center dots">&nbsp;</div>
+              <div>
                 {MonOH}
                 -
                 {MonCH}
-              </li>
-              <li>
-                Tuesday...........
+              </div>
+            </div>
+            <div className="d-flex justify-content-between mb-2">
+              <div className="days">Tuesday</div>
+              <div className="spaceBetweenHours flex-fill align-self-center dots">&nbsp;</div>
+              <div>
                 {TuesOH}
                 -
                 {TuesCH}
-              </li>
-              <li>
-                Wednesday.........
+              </div>
+            </div>
+            <div className="d-flex justify-content-between mb-2">
+              <div className="days">Wednesday</div>
+              <div className="spaceBetweenHours flex-fill align-self-center dots">&nbsp;</div>
+              <div>
                 {WedOH}
                 -
                 {WedCH}
-              </li>
-              <li>
-                Thursday..........
+              </div>
+            </div>
+            <div className="d-flex justify-content-between mb-2">
+              <div className="days">Thursday</div>
+              <div className="spaceBetweenHours flex-fill align-self-center dots">&nbsp;</div>
+              <div>
                 {ThursOH}
                 -
                 {ThursCH}
-              </li>
-              <li>
-                Friday............
+              </div>
+            </div>
+            <div className="d-flex justify-content-between mb-2">
+              <div className="days">Friday</div>
+              <div className="spaceBetweenHours flex-fill align-self-center dots">&nbsp;</div>
+              <div>
                 {FriOH}
                 -
                 {FriCH}
-              </li>
-              <li>
-                Saturday............
+              </div>
+            </div>
+            <div className="d-flex justify-content-between mb-2">
+              <div className="days">Saturday</div>
+              <div className="spaceBetweenHours flex-fill align-self-center dots">&nbsp;</div>
+              <div>
                 {SatOH}
                 -
                 {SatCH}
-              </li>
-              <li>
-                Sunday............
+              </div>
+            </div>
+            <div className="d-flex justify-content-between mb-2">
+              <div className="days">Sunday</div>
+              <div className="spaceBetweenHours flex-fill align-self-center dots">&nbsp;</div>
+              <div>
                 {SunOH}
                 -
                 {SunCH}
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
         </div>
       );
     }
     return (
       <div role="row" tabIndex="0" onKeyPress={this.handleKeyPress} onClick={e => this.handleHoursToggle(e)}>
-        <h1>Open Now</h1>
+        <div className="d-flex justify-content-start">
+          <div className="hoursLogo">
+            <i className="far fa-clock" />
+          </div>
+          <h6>Open Now</h6>
+          <div>
+            <i className="fas fa-angle-down" />
+          </div>
+        </div>
       </div>
     );
   }

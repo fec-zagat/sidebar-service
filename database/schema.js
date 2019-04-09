@@ -20,7 +20,7 @@ const restaurantSchema = new mongoose.Schema({
   address: {
     street: String,
     city: String,
-    zipcode: Number,
+    zipcode: String,
     district: String,
     country: String,
     latitude: Number,

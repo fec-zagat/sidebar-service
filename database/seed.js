@@ -2,13 +2,14 @@ const faker = require('faker');
 const schema = require('./schema');
 const db = require('./index');
 
-faker.locale = 'de';
+faker.locale = 'en_CA';
 const restaurantSampleData = [];
 
 const capitalize = (s) => {
   if (typeof s !== 'string') return '';
   return s.charAt(0).toUpperCase() + s.slice(1);
 };
+
 
 for (let i = 1; i <= 100; i += 1) {
   const sampleData = {

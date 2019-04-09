@@ -1,45 +1,78 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Hours from './Hours';
+import Map from './Map';
+import '../styles/sidebar.css';
+
 
 class SideBar extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-    };
+    this.state = {};
   }
 
   render() {
     const { details } = this.props;
     const {
       openHours, closeHours, address, phoneNumber, officialWebsite,
+      address: {
+        street, city, zipcode, country,
+      },
     } = details;
-    const {
-      street, city, zipcode, country,
-    } = address;
     return (
-      <div>
+      <div className="d-flex flex-column">
         <div>
           <Hours openHours={openHours} closeHours={closeHours} />
         </div>
-        <div>
-          <span>
-            { street }
-            { city }
-            { zipcode }
-            { country }
-          </span>
+        <div className="addressBox d-flex justify-content-start">
+          <div>
+            <i className="fas fa-map-marker-alt" />
+          </div>
+          <div className="hoverRed">
+            <span>
+              {street}
+              &#44;
+              &nbsp;
+              {city}
+              &#44;
+              &nbsp;
+              {zipcode}
+              &#44;
+            </span>
+            <div>
+              {country}
+            </div>
+          </div>
         </div>
-        <div>
-          {phoneNumber}
+        <div className="phoneBox hoverRed d-flex justify-content-start">
+          <div>
+            <i className="fas fa-phone" />
+          </div>
+          <div>
+            {phoneNumber}
+          </div>
         </div>
-        <div>
-          {officialWebsite}
+        <div className="officialWebsiteBox d-flex justify-content-start">
+          <div>
+            <i className="far fa-credit-card" />
+          </div>
+          <div className="hoverRed">
+            <a>
+              {officialWebsite}
+            </a>
+          </div>
         </div>
-        <div>
-          <h1>Get Directions</h1>
+        <div className="getDirectionsBox hoverRed d-flex justify-content-start">
+          <div>
+            <i className="fas fa-directions" />
+          </div>
+          <div>
+            <h6>Get Directions</h6>
+           
+          </div>
         </div>
+        <Map address={address} />
       </div>
     );
   }
