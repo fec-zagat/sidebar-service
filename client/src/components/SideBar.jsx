@@ -4,12 +4,12 @@ import Hours from './Hours';
 import Map from './Map';
 import '../styles/sidebar.css';
 
+
 class SideBar extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-    };
+    this.state = {};
   }
 
   render() {
@@ -69,9 +69,10 @@ class SideBar extends Component {
           </div>
           <div>
             <h6>Get Directions</h6>
-            <Map address={address} />
+           
           </div>
         </div>
+        <Map address={address} />
       </div>
     );
   }
