@@ -3,6 +3,7 @@
 }
 
 .foodDecorService {
+  text-transform: uppercase;
   width: 30%;
 }
 
@@ -26,6 +27,7 @@
 }
 
 .theTagazReview {
+  text-transform: uppercase;
   margin-top: 20px;
 }
 
