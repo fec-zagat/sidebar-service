@@ -10,16 +10,26 @@ module.exports = {
     path: DIST_DIR,
   },
   module: {
-    rules: [
-      {
-        test: /\.jsx?/,
-        exclude: /node_modules/,
-        use: ['babel-loader'],
+    rules: [{
+      test: /\.jsx?/,
+      exclude: /node_modules/,
+      use: ['babel-loader'],
+    },
+    {
+      test: /\.css$/,
+      use: [{
+        loader: 'style-loader',
+      }, {
+        loader: 'css-loader',
+      }],
+    },
+    {
+      test: /\.svg/,
+      use: {
+        loader: 'svg-url-loader',
+        options: {},
       },
-      {
-        test: /\.css$/,
-        use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
-      },
+    },
     ],
   },
   resolve: {
