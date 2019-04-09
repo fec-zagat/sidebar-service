@@ -4,7 +4,6 @@ import Hours from './Hours';
 import Map from './Map';
 import '../styles/sidebar.css';
 
-
 class SideBar extends Component {
   constructor(props) {
     super(props);
@@ -21,6 +20,7 @@ class SideBar extends Component {
       },
     } = details;
     return (
+
       <div className="d-flex flex-column">
         <div>
           <Hours openHours={openHours} closeHours={closeHours} />
