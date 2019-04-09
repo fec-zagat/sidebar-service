@@ -33,17 +33,12 @@ class Hours extends Component {
     if (hoursToggle) {
       return (
         <div>
-
           <div className="openNow" role="row" tabIndex="0" onKeyPress={this.handleKeyPress} onClick={e => this.handleHoursToggle(e)}>
             <div className="d-flex justify-content-start">
-              <div className="hoursLogo mt-3">
-                <i className="far fa-clock" />
-              </div>
+              <div className="hoursLogo" />
               <div className="hoverRed d-flex justify-content-start">
-                <h6>Open Now</h6>
-                <div>
-                  <i className="fas fa-angle-up mt-3" />
-                </div>
+                <h5>Open Now</h5>
+                <div className="downLogo" />
               </div>
 
             </div>
@@ -119,14 +114,10 @@ class Hours extends Component {
     }
     return (
       <div role="row" tabIndex="0" onKeyPress={this.handleKeyPress} onClick={e => this.handleHoursToggle(e)}>
-        <div className="d-flex justify-content-start">
-          <div className="hoursLogo">
-            <i className="far fa-clock" />
-          </div>
-          <h6>Open Now</h6>
-          <div>
-            <i className="fas fa-angle-down" />
-          </div>
+        <div className="hoverRed d-flex justify-content-start">
+          <div className="hoursLogo" />
+          <h5>Open Now</h5>
+          <div className="upLogo" />
         </div>
       </div>
     );
