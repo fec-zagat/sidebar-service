@@ -8,7 +8,7 @@
 }
 
 .openNow {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .fa-angle-up {
@@ -19,14 +19,32 @@
   margin-left: 10px;
 }
 
-.hoursLogo {
-  margin-right: 10px;
-}
-
-.fa-clock {
-  color: #b70038;
-}
-
 .hoverRed:hover {
   color: #b70038;
+}
+
+.hoursLogo {
+  margin-top: 10px;
+  margin-right: 15px;
+  background: no-repeat center url('../../../public/images/hours.svg');
+  width: 17px;
+  height: 17px;
+}
+
+.upLogo {
+  margin-top: 10px;
+  margin-right: 15px;
+  background: no-repeat center url('../../../public/images/up.svg');
+  width: 17px;
+  height: 17px;
+  margin-left: 15px;
+}
+
+.downLogo {
+  margin-top: 10px;
+  margin-right: 15px;
+  background: no-repeat center url('../../../public/images/down.svg');
+  width: 17px;
+  height: 17px;
+  margin-left: 15px;
 }

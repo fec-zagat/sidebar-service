@@ -24,23 +24,25 @@ const Main = (props) => {
         <img src="./images/logo.svg" alt="logo" />
         &nbsp;
       </div>
-      <h6 className="theTagazReview mb-3">THE TAGAZ REVIEW</h6>
+      <h5 className="theTagazReview mb-3">the tagaz review</h5>
       <div className="foodDecorService text-center mt-2">
-        <div className="d-inline-block border-right">
+        <div className="d-inline-block border-right mt-10">
           <h2>{food}</h2>
-          <h6>FOOD</h6>
+          <h6>food</h6>
         </div>
         <div className="d-inline-block border-right">
           <h2>{decor}</h2>
-          <h6>DECOR</h6>
+          <h6>decor</h6>
         </div>
         <div className="d-inline-block">
           <h2>{service}</h2>
-          <h6>SERVICE</h6>
+          <h6>service</h6>
         </div>
       </div>
       <div className="foodDecorServiceLine border-bottom mb-3 mt-3" />
-      <span>{bodyDescription}</span>
+      <div className="bodyDescriptionBox">
+        <h4>{bodyDescription}</h4>
+      </div>
     </div>
   );
 };

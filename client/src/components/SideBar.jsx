@@ -4,7 +4,6 @@ import Hours from './Hours';
 import Map from './Map';
 import '../styles/sidebar.css';
 
-
 class SideBar extends Component {
   constructor(props) {
     super(props);
@@ -21,14 +20,13 @@ class SideBar extends Component {
       },
     } = details;
     return (
+
       <div className="d-flex flex-column">
         <div>
           <Hours openHours={openHours} closeHours={closeHours} />
         </div>
         <div className="addressBox d-flex justify-content-start">
-          <div>
-            <i className="fas fa-map-marker-alt" />
-          </div>
+          <div className="markerLogo" />
           <div className="hoverRed">
             <span>
               {street}
@@ -46,30 +44,23 @@ class SideBar extends Component {
           </div>
         </div>
         <div className="phoneBox hoverRed d-flex justify-content-start">
-          <div>
-            <i className="fas fa-phone" />
-          </div>
+          <div className="phoneLogo" />
           <div>
             {phoneNumber}
           </div>
         </div>
         <div className="officialWebsiteBox d-flex justify-content-start">
-          <div>
-            <i className="far fa-credit-card" />
-          </div>
+          <div className="websiteLogo" />
           <div className="hoverRed">
             <a>
               {officialWebsite}
             </a>
           </div>
         </div>
-        <div className="getDirectionsBox hoverRed d-flex justify-content-start">
+        <div className="getDirectionsBox hoverRed d-flex justify-content-start mb-5">
+          <div className="directionLogo" />
           <div>
-            <i className="fas fa-directions" />
-          </div>
-          <div>
-            <h6>Get Directions</h6>
-           
+            Get Directions
           </div>
         </div>
         <Map address={address} />

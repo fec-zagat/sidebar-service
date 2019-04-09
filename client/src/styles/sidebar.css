@@ -1,40 +1,47 @@
-
-.fa-map-marker-alt {
-  margin-right: 20px;
-  color: #b70038;
-}
-
-.fa-phone {
-  margin-right: 20px;
-  color: #b70038;
-}
-
-.fa-credit-card {
-  margin-right: 20px;
-  color: #b70038;
-}
-
-.fa-directions {
-  margin-right: 20px;
-  color: #b70038;
-}
-
 .phoneBox {
-  margin-top: 15px;
+  margin-top: 25px;
 }
 
 .addressBox {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .officialWebsiteBox {
-  margin-top: 15px;
+  margin-top: 25px;
 }
 
 .getDirectionsBox {
-  margin-top: 15px;
+  margin-top: 25px;
 }
 
 .hoverRed:hover {
   color: #b70038;
+}
+
+.markerLogo {
+  margin-right: 15px;
+  background: no-repeat center url('../../../public/images/marker.svg');
+  width: 17px;
+  height: 17px;
+}
+
+.directionLogo {
+  margin-right: 15px;
+  background: no-repeat center url('../../../public/images/direction.svg');
+  width: 17px;
+  height: 17px;
+}
+
+.phoneLogo {
+  margin-right: 15px;
+  background: no-repeat center url('../../../public/images/phone.svg');
+  width: 17px;
+  height: 17px;
+}
+
+.websiteLogo {
+  margin-right: 15px;
+  background: no-repeat center url('../../../public/images/website.svg');
+  width: 17px;
+  height: 17px;
 }
