@@ -21,7 +21,7 @@ const Main = (props) => {
         <div className="d-inline m-1">{price}</div>
       </div>
       <div className="mainDivider">
-        <img src="./images/logo.svg" alt="logo" />
+        <div className="tagazLogo" />
         &nbsp;
       </div>
       <h5 className="theTagazReview mb-3">the tagaz review</h5>
