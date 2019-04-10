@@ -2,11 +2,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const path = require('path');
+const cors = require('cors');
 const { findOneRestaurant } = require('../database/methods');
 
 const app = express();
 const port = 3003;
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('combined'));
