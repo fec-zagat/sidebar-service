@@ -12,13 +12,14 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('combined'));
-app.use(express.static(path.join(__dirname, '/../public')));
+app.use('/r/:restaurant', express.static(path.join(__dirname, '/../public')));
 
-const randomRestaurantID = Math.floor(Math.random() * 100);
+//const randomRestaurantID = Math.floor(Math.random() * 100);
 
 
-app.get('/r', (req, res) => {
-  findOneRestaurant(randomRestaurantID, (err, results) => {
+app.get('/restaurants/:id', (req, res) => {
+  const requestedID = req.params.id;
+  findOneRestaurant(requestedID, (err, results) => {
     if (err) {
       res.sendStatus(500);
     } else {
