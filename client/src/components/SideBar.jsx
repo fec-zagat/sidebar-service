@@ -8,11 +8,13 @@ class SideBar extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+    };
   }
 
+
   render() {
-    const { details } = this.props;
+    const { details, handleMapClick, handleFaceTimeClick } = this.props;
     const {
       openHours, closeHours, address, phoneNumber, officialWebsite,
       address: {
@@ -21,11 +23,11 @@ class SideBar extends Component {
     } = details;
     return (
 
-      <div className="d-flex flex-column">
+      <div className="sidebarContainer d-flex flex-column">
         <div>
           <Hours openHours={openHours} closeHours={closeHours} />
         </div>
-        <div className="addressBox d-flex justify-content-start">
+        <div className="addressBox d-flex justify-content-start" onClick={handleMapClick} >
           <div className="markerLogo" />
           <div className="hoverRed">
             <span>
@@ -46,7 +48,7 @@ class SideBar extends Component {
         <div className="phoneBox hoverRed d-flex justify-content-start">
           <div className="phoneLogo" />
           <div>
-            {phoneNumber}
+            <a type="text" className="phoneNumber" onClick={handleFaceTimeClick}>{phoneNumber}</a>
           </div>
         </div>
         <div className="officialWebsiteBox d-flex justify-content-start">
@@ -73,4 +75,6 @@ export default SideBar;
 
 SideBar.propTypes = {
   details: PropTypes.object.isRequired,
+  handleFaceTimeClick: PropTypes.func.isRequired,
+  handleMapClick: PropTypes.func.isRequired,
 };

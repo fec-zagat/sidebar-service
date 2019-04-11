@@ -20,7 +20,7 @@ class Map extends Component {
           height="300"
           frameBorder="0"
           className="mapIframe"
-          src={this.mapUrl(latitude, longtitude)}
+          src={this.mapUrl(37.787570, -122.396632)}
         />
       </div>
     );

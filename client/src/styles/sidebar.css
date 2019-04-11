@@ -1,3 +1,9 @@
+.sideBarContainer {
+  position: 'absolute';
+  top: 100;
+  right: 300;
+}
+
 .phoneBox {
   margin-top: 25px;
 }

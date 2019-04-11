@@ -1,0 +1,63 @@
+.mapContainerModal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  background-color: rgba(12, 1, 1, 0.84);
+}
+
+.nameButtonContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.mapModal {
+  height: 80vh; 
+  width: 90%;
+}
+
+.nameMapModal {
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 450px;
+  width: 70%;
+}
+.buttonMapModal {
+  margin-top: 28px;
+  width: 30%;
+}
+
+.round-button {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  line-height: 40px;
+  color: #f5f5f5;
+  text-align: center;
+  background: #292424;
+  box-shadow: 0 0 3px gray;
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 400px;
+}
+
+.round-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.tagazLogo {
+  margin-right: 15px;
+  background: no-repeat center url('../../../public/images/logo.svg');
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 100px;
+  top: -26px;
+  background-size: 30px 30px;
+}
