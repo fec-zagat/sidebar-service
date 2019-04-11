@@ -12,7 +12,7 @@ const Main = (props) => {
   return (
     <div className="mainBox">
       <h1>{name}</h1>
-      <p><span>{headerDescription}</span></p>
+      <h6><span>{headerDescription}</span></h6>
       <div className="cuisineDistrictPrice">
         <div className="d-inline m-1">{cuisine}</div>
         &middot;
