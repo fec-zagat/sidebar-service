@@ -9,9 +9,8 @@ class Hours extends Component {
     const date = new Date();
 
     this.state = {
-      hoursToggle: true,
+      hoursToggle: false,
       currentDay: moment(date).format('ddd'),
-      currentTime: moment(date).format('k mm'),
     };
   }
 
