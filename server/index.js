@@ -14,9 +14,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('combined'));
 app.use('/r/:restaurant', express.static(path.join(__dirname, '/../public')));
 
-//const randomRestaurantID = Math.floor(Math.random() * 100);
-
-
 app.get('/restaurants/:id', (req, res) => {
   const requestedID = req.params.id;
   findOneRestaurant(requestedID, (err, results) => {
