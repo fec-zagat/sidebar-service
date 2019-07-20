@@ -4,10 +4,9 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/fec-zagat/photo-carousel-service
+  - https://github.com/fec-zagat/related-restaurants-service
+  - https://github.com/fec-zagat/search-nav-service
 
 ## Table of Contents
 
